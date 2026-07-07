@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+.editorial-footer {
+  background-color: #000000; /* Pure deep black space */
+  color: #ffffff;
+  padding: 0 8% 40px 8%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Hairline border that expands gracefully on scroll */
+.horizontal-line {
+  width: 100%;
+  height: 1px;
+  background-color: #222222;
+}
+
+/* Main Split Screen Design layout */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  padding: 120px 0;
+}
+
+/* Left Panel Styles */
+.manifesto-side {
+  height: 100%;
+}
+
+.sticky-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  color: #555555;
+  font-weight: 600;
+}
+
+.manifesto-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(32px, 3.5vw, 56px);
+  line-height: 1.2;
+  font-weight: 300;
+  color: #e5e5e5;
+  margin: 0;
+  max-width: 420px;
+}
+
+.editorial-contact {
+  margin-top: 40px;
+}
+
+.editorial-mail {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 300;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 4px;
+  transition: border-color 0.4s ease, color 0.4s ease;
+}
+
+.editorial-mail:hover {
+  border-color: #ffffff;
+  color: #888888;
+}
+
+.editorial-hours {
+  font-size: 12px;
+  color: #444444;
+  margin-top: 12px;
+  letter-spacing: 0.05em;
+}
+
+/* Right Side Giant Index Navigation Menu */
+.directory-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.giant-nav-item {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #111111;
+  padding: 40px 0;
+  transition: border-color 0.4s ease;
+}
+
+.giant-nav-item:first-child {
+  padding-top: 0;
+}
+
+.giant-nav-item:hover {
+  border-color: #333333; /* Fine lines illuminate gracefully on hover */
+}
+
+.index-num {
+  font-size: 12px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: #444444;
+  margin-right: 30px;
+  margin-top: 8px;
+}
+
+.giant-nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.link-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 300;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease;
+}
+
+.link-subtitle {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #444444;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+/* Premium Hover State Transformations */
+.giant-nav-item:hover .link-title {
+  color: #ffffff;
+  transform: translateX(15px);
+}
+
+.giant-nav-item:hover .link-subtitle {
+  color: #888888;
+  transform: translateX(-5px);
+}
+
+/* Minimalist Clean Meta Base Row */
+.editorial-base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #333333;
+  padding-top: 40px;
+  border-top: 1px solid #111111;
+}
+
+.social-row {
+  display: flex;
+  gap: 15px;
+}
+
+.social-row a {
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-row a:hover {
+  color: #ffffff;
+}
+
+/* Clean Responsive Systems */
+@media (max-width: 968px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+    padding: 80px 0;
+  }
+  .giant-nav-item {
+    padding: 30px 0;
+  }
+}

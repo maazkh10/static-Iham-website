@@ -1,0 +1,223 @@
+.team-section{
+
+    /* background:#f7f5f2; */
+
+    padding:140px 7%;
+
+    overflow:hidden;
+
+}
+
+.team-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    margin-bottom:70px;
+
+}
+
+.team-subtitle{
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    color:#777;
+
+}
+
+.team-title{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(90px,10vw,180px);
+
+    font-weight:500;
+
+    line-height:.9;
+
+    margin:20px 0;
+
+    color:#111;
+
+}
+
+.team-description{
+
+    width:650px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#666;
+
+}
+
+.team-buttons{
+
+    display:flex;
+
+    gap:16px;
+
+}
+
+.team-buttons button{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    border:1px solid #ddd;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-size:24px;
+
+    transition:.35s;
+
+}
+
+.team-buttons button:hover{
+
+    background:#111;
+
+    color:white;
+
+}
+
+.team-slider{
+
+    display:flex;
+
+    gap:28px;
+
+    overflow-x:auto;
+
+    scroll-behavior:smooth;
+
+    scrollbar-width:none;
+
+}
+
+.team-slider::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.team-card{
+
+    flex:0 0 calc((100% - 56px)/3.5);
+
+    cursor:pointer;
+
+}
+
+.team-image{
+
+    aspect-ratio:3/4;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+}
+
+.team-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+
+}
+
+.team-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.team-card h3{
+
+    margin-top:22px;
+
+    font-size:34px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-weight:500;
+
+    color:#111;
+
+}
+
+.team-card span{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#777;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+}
+
+@media(max-width:1000px){
+
+.team-card{
+
+    flex:0 0 48%;
+
+}
+
+.team-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:40px;
+
+}
+
+.team-description{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.team-card{
+
+    flex:0 0 90%;
+
+}
+
+.team-title{
+
+    font-size:70px;
+
+}
+
+}
