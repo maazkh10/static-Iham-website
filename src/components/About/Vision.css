@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+.vision-luxury-canvas {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 160px 6% 220px 6%;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: hidden;
+  border-top: 1px solid #f9f9f9;
+}
+
+/* Minimal Metadata Bar */
+.v-meta-header {
+  margin-bottom: 80px;
+}
+
+.v-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  color: #000000;
+}
+
+/* Main Interactive Canvas Area */
+.v-interactive-layout {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+/* Perfect Circular Aperture Frame */
+.v-circle-aperture-frame {
+  width: min(55vw, 600px);
+  aspect-ratio: 1/1;
+  position: relative;
+  z-index: 2; /* Sandwiched perfectly between typography layers */
+  will-change: transform;
+}
+
+.v-circle-inner-mask {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* The premium perfect circular cutout */
+  overflow: hidden;
+  background-color: #fcfcfc;
+  position: relative;
+}
+
+.v-circle-img {
+  width: 100%;
+  height: 130%; /* Extra vertical depth allowance for clean scrolling */
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  will-change: transform;
+}
+
+/* Kinetic Line Typography Overlays */
+.v-typography-overlay, .v-manifesto-overlay {
+  position: absolute;
+  width: 100%;
+  pointer-events: none; /* Allows natural interaction behind text layers */
+}
+
+.v-typography-overlay {
+  top: 5%;
+  left: 0;
+  z-index: 3; /* Passes over the front face of the circle */
+}
+
+.v-manifesto-overlay {
+  bottom: 5%;
+  right: 0;
+  z-index: 1; /* Passes behind or acts as the structural baseline frame */
+  text-align: right;
+}
+
+.v-reveal-line {
+  margin: 0;
+  font-size: clamp(40px, 6.5vw, 110px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: block;
+}
+
+.v-reveal-line span {
+  display: block;
+  transform: translateY(100%);
+}
+
+/* Typographic Tension Pairings */
+.v-reveal-line.serif-font {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: italic;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  padding-left: 12%;
+}
+
+.structural-indent {
+  padding-right: 8%;
+}
+
+/* Double Column Context Narrative Footer */
+.v-details-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 120px;
+  max-width: 1100px;
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid #eaeaea;
+}
+
+.v-text-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.v-narrative-p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #333333;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.v-text-column.secondary .v-narrative-p {
+  color: #777777;
+}
+
+/* Responsive Spatial Systems */
+@media (max-width: 968px) {
+  .v-interactive-layout {
+    min-height: auto;
+    padding: 60px 0;
+    gap: 40px;
+  }
+  .v-circle-aperture-frame {
+    width: 80vw;
+    position: relative;
+    order: 2;
+  }
+  .v-typography-overlay, .v-manifesto-overlay {
+    position: relative;
+    top: auto;
+    bottom: auto; 
+    text-align: left;
+  }
+  .v-typography-overlay { order: 1; }
+  .v-manifesto-overlay { order: 3; }
+  .v-reveal-line { font-size: 8vw; }
+  .v-details-block { grid-template-columns: 1fr; gap: 40px; }
+  .v-reveal-line.serif-font { padding-left: 0; }
+}

@@ -1,0 +1,154 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap'); */
+
+.profile-canvas-v2 {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 100px 2% 100px 5%;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; */
+  overflow: hidden;
+}
+
+/* Header Text Masking */
+.p-header-v2 {
+  margin-bottom: 120px;
+}
+
+.p-eyebrow-v2 {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.p-mask-title {
+  margin: 0;
+  font-size: clamp(50px, 8.5vw, 140px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: block;
+}
+
+.p-mask-title span {
+  display: block;
+  transform: translateY(100%);
+}
+
+.p-mask-title.serif-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: italic;
+  text-transform: capitalize;
+  letter-spacing: 0.01em;
+  padding-left: 10%;
+}
+
+/* Master Three-Column Interlocking Grid */
+.p-triptych-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Animation Reveal Frame Containers */
+.p-img-reveal-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fcfcfc;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); /* Baseline for animation trigger */
+}
+
+.p-img-reveal-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Custom Aspect Ratios per Column to create structural friction */
+.aspect-portrait {
+  aspect-ratio: 3/4;
+}
+
+.aspect-tall {
+  aspect-ratio: 4/6;
+}
+
+.aspect-landscape {
+  aspect-ratio: 16/10;
+  margin-top: 50px;
+}
+
+/* Center Text and Inside-Text Elements */
+.p-col-center {
+  padding: 80px 20px 0 20px;
+}
+
+.p-manifesto-lead {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1.35;
+  font-weight: 300;
+  color: #111111;
+  margin: 0 0 40px 0;
+}
+
+.p-editorial-line {
+  width: 100%;
+  height: 1px;
+  background-color: #eaeaea;
+  margin-bottom: 40px;
+}
+
+.p-manifesto-sub {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #555555;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  margin: 0;
+  max-width: 460px;
+}
+
+/* Off-axis offsets for Parallax columns */
+.p-col-left {
+  padding-top: 160px;
+}
+
+.p-col-right {
+  padding-top: 0px;
+}
+
+/* Typography Under Captions */
+.p-meta-caption {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #888888;
+  margin-top: 16px;
+  text-transform: uppercase;
+}
+
+.p-meta-caption.right-align {
+  text-align: right;
+}
+
+/* Responsive Structural Breakdown system */
+@media (max-width: 1024px) {
+  .p-triptych-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .p-col-left, .p-col-right {
+    padding-top: 0 !important;
+    transform: none !important;
+  }
+  .img-speed-slow, .img-speed-fast {
+    transform: none !important;
+  }
+}

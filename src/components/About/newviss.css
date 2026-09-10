@@ -1,0 +1,333 @@
+/* Base Global Layout & Theme */
+.about-page-wrapper {
+  width: 100%;
+  /* background-color: #faf9f6;  */
+  color: #000000;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.luxury-section {
+  width: 100%;
+  display: grid;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e2e1dc; 
+}
+
+/* Base Image Containers */
+.image-frame {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f2f1ed;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 1. ARCHIVAL CINEMATIC HERO (OVERHAULED VISION SECTION) */
+.vision-cinematic-hero {
+  display: flex;
+  flex-direction: column;
+  padding: 8rem 4rem 10rem 4rem;
+}
+
+.vision-header-block {
+  margin-bottom: 5rem;
+}
+
+.vision-archival-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  color: #8e8d8a;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.vision-editorial-title {
+  font-family: "Didot", "Playfair Display", "Georgia", serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0;
+}
+
+.panoramic-vision-wrapper {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.panoramic-frame {
+  width: 100%;
+  aspect-ratio: 21 / 9; /* Cinematic ultra-wide layout banner */
+  overflow: hidden;
+  background-color: #f2f1ed;
+}
+
+.panoramic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform, clip-path;
+}
+
+.vision-manifesto-columns {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: flex-start;
+  max-width: 90%;
+}
+
+.manifesto-sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: #000000;
+  margin: 0;
+}
+
+.manifesto-text-lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #000000;
+  margin: 0 0 2rem 0;
+}
+
+.manifesto-text-secondary {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: #666666;
+  margin: 0;
+  max-width: 85%;
+}
+
+/* 2. VISION SPLIT SYSTEM */
+.vision-split {
+  /* grid-template-columns: 1.1fr 1fr; */
+  align-items: center;
+}
+
+.vision-img-col {
+  padding-right: 6rem;
+  border-right: 1px solid #e2e1dc;
+}
+
+.vision-frame {
+  width: 75%;
+  aspect-ratio: 1 / 1.15;
+  margin: 0 auto;
+}
+
+.vision-text-col {
+  padding-left: 6rem;
+}
+
+/* 3. CORE VALUES INTERACTIVE ROW GRID */
+.values-grid-container {
+  grid-template-columns: 0.8fr 1.5fr 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.values-right-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.value-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #e2e1dc;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: opacity 0.35s ease;
+}
+
+.value-row:first-child {
+  padding-top: 0;
+}
+
+.value-row:last-child {
+  border-bottom: none;
+}
+
+.value-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.value-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #444444;
+  font-weight: 300;
+}
+
+.values-right-list-container:hover .value-row {
+  opacity: 0.35;
+}
+
+.values-right-list-container .value-row:hover {
+  opacity: 1;
+}
+
+.values-frame {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+}
+
+.gsap-value-img {
+  will-change: transform, opacity;
+}
+
+/* 4. MISSION BLOCK LAYOUT */
+.mission-layout {
+  grid-template-columns: 1.2fr 2fr;
+  align-items: center;
+  gap: 4rem;
+  border-bottom: none;
+}
+
+.mission-frame {
+  width: 65%;
+  aspect-ratio: 1 / 1.1;
+  margin-left: auto;
+}
+
+.mission-right-content {
+  max-width: 75%;
+  padding-left: 2rem;
+}
+
+.mission-quote {
+  font-size: 1.65rem;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+}
+
+.mission-author {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #777777;
+  margin-bottom: 2rem;
+}
+
+/* Shared Components & Buttons */
+.editorial-heading {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 3.5rem;
+}
+
+.editorial-heading-small {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.editorial-body-wrapper {
+  margin-bottom: 3.5rem;
+}
+
+.editorial-paragraph {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.luxury-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: #000000;
+  border: 1px solid #999999;
+  padding: 0.45rem 1.75rem;
+  border-radius: 30px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.luxury-pill-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* Responsive Adaptive Viewports */
+@media (max-width: 1200px) {
+  .vision-editorial-title {
+    font-size: 3.5rem;
+  }
+  .vision-manifesto-columns {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+  .manifesto-text-secondary {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .luxury-section {
+    grid-template-columns: 1fr !important;
+    gap: 3rem;
+    padding: 6rem 2rem;
+  }
+  .vision-cinematic-hero {
+    padding: 4rem 2rem;
+  }
+  .panoramic-frame {
+    aspect-ratio: 16 / 10;
+  }
+  .vision-img-col {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #e2e1dc;
+    padding-bottom: 3rem;
+  }
+  .vision-text-col {
+    padding-left: 0;
+  }
+  .vision-frame, .mission-frame {
+    width: 100%;
+  }
+  .values-grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .values-far-right-img {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .mission-right-content {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}

@@ -1,57 +1,73 @@
 import "./App.css";
-// import About from "./components/About";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Component Imports
 import Contact from "./components/Contact";
 import Footer from "./components/Footer/Footer";
 import FounderVision from "./components/Founde/Founder";
-
 import Hero from "./components/HeroGrid/HeroGrid";
-import Word from "./components/Our-work/Word";
-import Projects from "./components/Projects";
+import Work from "./components/Our-work/Work";
+// import Projects from "./components/Projects";
+import About from   "./pages/About/About";
 import Team from "./components/Team/Team";
 import Video from "./components/Video-sec/Video";
 import Whtwedo from "./components/What-we-do/wwd";
+import CeoPage from "./pages/Ceo/Ceo-profile";
+import ContactPage from "./pages/Contact/Contact";
 
+// Created a separate Home component for your landing page layout
+function Home() {
+  return (
+    <>
+      <Hero />
+      <main className="overlay-content">
+        <section className="page">
+          <Video />
+        </section>
+
+        <section className="page">
+          <Whtwedo />
+        </section>
+
+        <section className="page">
+          <Work />
+        </section>
+        <section className="page">
+          <FounderVision />
+        </section>
+        <section className="page">
+          <Team />
+        </section>
+
+
+      </main>
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="app">
+    <Router>
+      <div className="app">
+        
+        <Routes>
+          {/* Main Landing Page */}
+          <Route path="/" element={<Home />} />
 
-      {/* Hero */}
-      <Hero />
+          {/* Dedicated pages for other components */}
+          <Route path="/About" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        <Route path="/ceo-profile" element={<CeoPage />} />
+        
+        <Route path="/contact-us" element={<ContactPage />} />
+        
+        </Routes>
 
-      {/* Everything comes over Hero */}
-      <main className="overlay-content">
-
-        <section className="page">
-     <Video />
-        </section>
-
-       
-        <section className="page">
-      <Whtwedo />
-        </section>
-
-
-        <section className="page">
-   <Word />
-        </section>
-
-
- <section className="page">
-   <Team />
-        </section>
-
-
-
- <section className="page">
-   <FounderVision />
-        </section>
-
-
-<Footer />
-      </main>
-
-    </div>
+        {/* Footer stays visible across all routes */}
+        <Footer />
+        
+      </div>
+    </Router>
   );
 }
 
