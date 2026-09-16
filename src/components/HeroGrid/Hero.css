@@ -1,2370 +1,300 @@
-/* =========================================================
-   FONTS
-========================================================= */
-
-@import url(
-  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap"
-);
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
+/* ===========================
+   RESET & TRACKING SYSTEMS
+=========================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-html,
-body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-
-button {
-  font-family: inherit;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
 .hero {
   width: 100%;
   height: 100vh;
-
   position: relative;
-
   overflow: hidden;
-
-  background: #061b31;
+  background: #fff;
 }
 
-
-/* =========================================================
-   BLACK SPLIT
-========================================================= */
-
+/* BLACK PANELS (OVERLAY LOADER) */
 .top-panel,
 .bottom-panel {
   position: absolute;
-
   left: 0;
-
   width: 100%;
-
   height: 50%;
-
   background: #000;
-
-  z-index: 999;
-
+  z-index: 99; /* Higher than filmstrip views for early animation */
   will-change: transform;
 }
 
+.top-panel { top: 0; }
+.bottom-panel { bottom: 0; }
 
-.top-panel {
-  top: 0;
-}
-
-
-.bottom-panel {
-  bottom: 0;
-}
-
-
-/* =========================================================
-   HORIZONTAL WRAPPER
-========================================================= */
-
+/* HORIZONTAL VIEWPORT WRAPPER */
 .horizontal-scroll-wrapper {
   display: flex;
-
   width: 200vw;
-
   height: 100%;
-
   will-change: transform;
 }
-
 
 .view-panel {
   width: 100vw;
-
-  min-width: 100vw;
-
   height: 100vh;
-
   position: relative;
-
   flex-shrink: 0;
-
+  display: flex;
   overflow: hidden;
 }
 
-
-/* =========================================================
-   FIRST PANEL
-========================================================= */
-
-.main-hero-view {
-  background: #f7f6f2;
+/* ===========================
+   GRID PANEL ARCHITECTURE
+=========================== */
+.hero-left {
+  width: 42%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-/* =========================================================
-   BRAND INTRO
-========================================================= */
-
-.brand-intro {
+/* Single Managed Brand Typography Instance */
+.hero-title {
   position: absolute;
-
-  inset: 0;
-
-  z-index: 100;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(26, 56, 86, 0.45),
-      transparent 42%
-    ),
-    #061b31;
-
-  color: #eee6da;
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(90px, 10vw, 220px);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -6px;
+  color: #111;
+  white-space: nowrap;
+  z-index: 10;
   will-change: transform, opacity;
 }
 
-
-/* =========================================================
-   GOLD FLOWS
-========================================================= */
-
-.gold-flow {
-  position: absolute;
-
-  pointer-events: none;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(
-    205,
-    160,
-    88,
-    0.75
-  );
-
-  opacity: 0.8;
-
-  filter:
-    drop-shadow(
-      0 0 12px rgba(
-        205,
-        160,
-        88,
-        0.15
-      )
-    );
-}
-
-
-.gold-flow-left {
-  width: 620px;
-
-  height: 950px;
-
-  left: -410px;
-
-  bottom: -470px;
-
-  transform:
-    rotate(-35deg)
-    skewX(-8deg);
-
-  box-shadow:
-    40px 0 0 rgba(255,255,255,0.025),
-    80px 0 0 rgba(255,255,255,0.018);
-}
-
-
-.gold-flow-right {
-  width: 500px;
-
-  height: 820px;
-
-  right: -250px;
-
-  top: -470px;
-
-  transform:
-    rotate(-32deg)
-    skewX(-10deg);
-
-  box-shadow:
-    35px 0 0 rgba(255,255,255,0.025),
-    70px 0 0 rgba(255,255,255,0.015);
-}
-
-
-/* =========================================================
-   GLOWS
-========================================================= */
-
-.gold-glow {
-  position: absolute;
-
-  width: 420px;
-
-  height: 420px;
-
-  border-radius: 50%;
-
-  pointer-events: none;
-
-  filter: blur(100px);
-
-  opacity: 0.12;
-}
-
-
-.glow-left {
-  left: -200px;
-
-  bottom: -180px;
-
-  background: #c89b57;
-}
-
-
-.glow-right {
-  right: -180px;
-
-  top: -200px;
-
-  background: #c89b57;
-}
-
-
-/* =========================================================
-   BRAND CENTER
-========================================================= */
-
-.brand-center {
-  position: absolute;
-
-  left: 50%;
-
-  top: 50%;
-
-  transform:
-    translate(-50%, -50%);
-
-  width: min(
-    700px,
-    90vw
-  );
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  text-align: center;
-
-  z-index: 10;
-}
-
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.brand-logo-wrapper {
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  width: 100%;
-}
-
-
-.brand-logo {
-  width: clamp(
-    210px,
-    22vw,
-    330px
-  );
-
-  height: auto;
-
-  max-height: 230px;
-
-  object-fit: contain;
-
-  display: block;
-
-  will-change:
-    transform,
-    opacity;
-}
-
-
-/* =========================================================
-   DIVIDER
-========================================================= */
-
-.brand-divider {
-  width: 108px;
-
-  height: 1px;
-
-  background: #c99b59;
-
-  margin-top: 24px;
-
-  margin-bottom: 24px;
-
-  transform-origin: center;
-}
-
-
-/* =========================================================
-   TAGLINE
-========================================================= */
-
-.brand-tagline {
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: clamp(
-    48px,
-    5vw,
-    76px
-  );
-
-  font-weight: 400;
-
-  line-height: 0.88;
-
-  letter-spacing: -2px;
-
-  color: #eee5d9;
-}
-
-
-/* =========================================================
-   SUBTITLE
-========================================================= */
-
-.brand-subtitle {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 15px;
-
-  margin-top: 27px;
-
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
-  font-size: 10px;
-
-  font-weight: 500;
-
-  letter-spacing: 4px;
-
-  color: #d9d0c5;
-}
-
-
-.brand-subtitle i {
-  font-style: normal;
-
-  color: #c59a5a;
-
-  font-size: 13px;
-}
-
-
-/* =========================================================
-   DISCOVER
-========================================================= */
-
-.discover-group {
-  margin-top: 65px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 13px;
-
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
-  font-size: 8px;
-
-  letter-spacing: 3px;
-
-  color: #cfc5b9;
-}
-
-
-.discover-arrow {
-  font-family: Arial, sans-serif;
-
-  font-size: 28px;
-
-  font-weight: 200;
-
-  line-height: 1;
-
-  color: #e4d9ca;
-}
-
-
-/* =========================================================
-   BRAND BOTTOM
-========================================================= */
-
-.brand-bottom {
-  position: absolute;
-
-  left: 24px;
-
-  right: 24px;
-
-  bottom: 25px;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: flex-end;
-
-  z-index: 10;
-
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
-  color: #bdb4a9;
-
-  font-size: 7px;
-
-  letter-spacing: 2px;
-}
-
-
-.brand-est {
-  display: flex;
-
-  align-items: center;
-
-  gap: 14px;
-}
-
-
-.small-line {
-  width: 34px;
-
-  height: 1px;
-
-  background: #bda47e;
-
-  display: block;
-}
-
-
-.brand-bottom-center {
-  display: flex;
-
-  gap: 12px;
-
-  position: absolute;
-
-  left: 50%;
-
-  transform:
-    translateX(-50%);
-}
-
-
-.brand-tomorrow {
-  display: flex;
-
-  align-items: center;
-
-  gap: 14px;
-
-  text-align: right;
-}
-
-
-/* =========================================================
-   PORTFOLIO
-========================================================= */
-
-.hero-left {
-  width: 42%;
-
-  height: 100%;
-
-  position: relative;
-
-  z-index: 10;
-}
-
-
-.portfolio-number {
-  position: absolute;
-
-  top: 20%;
-
-  left: 10%;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 18px;
-
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
-  font-size: 11px;
-
-  letter-spacing: 3px;
-
-  color: #b58a4b;
-}
-
-
-.portfolio-line {
-  width: 85px;
-
-  height: 1px;
-
-  display: block;
-
-  background: #c9a66b;
-
-  transform-origin: left center;
-}
-
-
-.portfolio-copy {
-  position: absolute;
-
-  left: 10%;
-
-  top: 29%;
-
-  width: min(
-    430px,
-    80%
-  );
-
-  z-index: 15;
-}
-
-
-.portfolio-heading {
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: clamp(
-    42px,
-    4.2vw,
-    72px
-  );
-
-  font-weight: 400;
-
-  line-height: 0.88;
-
-  letter-spacing: -2px;
-
-  color: #111c2c;
-
-  display: flex;
-
-  flex-direction: column;
-}
-
-
-.portfolio-heading span {
-  display: block;
-}
-
-
-.portfolio-heading strong {
-  display: block;
-
-  color: #b4863d;
-
-  font-weight: 500;
-
-  white-space: nowrap;
-}
-
-
-.portfolio-description {
-  width: min(
-    390px,
-    100%
-  );
-
-  margin-top: 34px;
-
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
-  font-size: 14px;
-
-  line-height: 1.7;
-
-  color: #69717d;
-}
-
-
-.portfolio-button {
-  margin-top: 34px;
-
-  width: 252px;
-
-  min-height: 48px;
-
-  padding: 0 20px;
-
-  background: transparent;
-
-  border: 1px solid #d6b77c;
-
-  color: #202b3a;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  font-size: 10px;
-
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.35s ease,
-    color 0.35s ease;
-}
-
-
-.portfolio-button:hover {
-  background: #111c2c;
-
-  color: white;
-
-  border-color: #111c2c;
-}
-
-
-.button-arrow {
-  font-size: 18px;
-}
-
-
-.portfolio-footer {
-  position: absolute;
-
-  left: 10%;
-
-  bottom: 7%;
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 8px;
-
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
-  font-size: 8px;
-
-  letter-spacing: 2px;
-
-  color: #7e7e7a;
-}
-
-
-.portfolio-footer small {
-  width: 100%;
-
-  font-size: 7px;
-
-  letter-spacing: 2.4px;
-}
-
-
-/* =========================================================
-   IMAGE GRID
-========================================================= */
-
 .hero-right {
-  position: absolute;
-
-  top: 0;
-
-  right: 0;
-
   width: 58%;
-
   height: 100%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   overflow: hidden;
 }
-
 
 .hero-grid {
   width: 100%;
-
   height: 92%;
-
   display: flex;
-
-  gap: 12px;
-
-  padding-right: 28px;
-
-  will-change: transform;
+  gap: 14px;
+  padding-right: 30px;
 }
 
-
+/* COLUMNS */
 .grid-column {
   flex: 1;
-
   display: flex;
-
   flex-direction: column;
-
-  gap: 12px;
-
-  min-width: 0;
-
+  gap: 14px;
   will-change: transform;
 }
 
+.column-1 { margin-top: 80px; }
+.column-2 { margin-top: -40px; }
+.column-3 { margin-top: 50px; }
+.column-4 { margin-top: -70px; }
 
-.column-1 {
-  margin-top: 80px;
-}
-
-
-.column-2 {
-  margin-top: -40px;
-}
-
-
-.column-3 {
-  margin-top: 50px;
-}
-
-
-.column-4 {
-  margin-top: -70px;
-}
-
-
+/* GRID ELEMENT CARDS */
 .grid-card {
   width: 100%;
-
   height: 260px;
-
-  position: relative;
-
   overflow: hidden;
-
+  position: relative;
+  border-radius: 4px;
   background: #ddd;
-
-  isolation: isolate;
 }
 
-
-.grid-card.tall {
-  height: 420px;
-}
-
+.grid-card.tall { height: 420px; }
 
 .grid-card img {
   width: 100%;
-
   height: 100%;
-
-  display: block;
-
   object-fit: cover;
-
+  display: block;
   will-change: transform;
-
-  transition:
-    transform 0.8s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
+  transition: transform 0.6s ease;
 }
 
-
-.grid-card:hover img {
-  transform: scale(1.07);
-}
-
+.grid-card:hover img { transform: scale(1.08); }
 
 .grid-card::after {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
-  z-index: 1;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.02) 30%,
-      rgba(0,0,0,0.75) 100%
-    );
-
-  pointer-events: none;
+  background: rgba(0, 0, 0, 0.04);
+  transition: 0.4s;
 }
 
+.grid-card:hover::after { background: rgba(0, 0, 0, 0); }
 
-.card-overlay {
-  position: absolute;
-
-  left: 14px;
-
-  right: 14px;
-
-  bottom: 12px;
-
-  z-index: 3;
-
-  color: white;
-}
-
-
-.card-line {
-  width: 34px;
-
-  height: 1px;
-
-  margin-bottom: 8px;
-
-  background: rgba(
-    255,
-    255,
-    255,
-    0.75
-  );
-}
-
-
-.card-bottom {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  gap: 8px;
-}
-
-
-.card-bottom span:first-child {
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
-  font-size: 8px;
-
-  letter-spacing: 1.7px;
-
-  white-space: nowrap;
-}
-
-
-.card-arrow {
-  font-size: 15px;
-}
-
-
-/* =========================================================
-   HERO FOOTER
-========================================================= */
-
+/* STRUCTURAL INFO RUNWAY MARKS */
 .hero-footer {
   position: absolute;
-
-  left: 40px;
-
-  right: 40px;
-
   bottom: 28px;
-
+  left: 40px;
+  right: 40px;
   display: flex;
-
   justify-content: space-between;
-
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
-  font-size: 9px;
-
+  font-size: 11px;
   text-transform: uppercase;
-
   letter-spacing: 2px;
-
+  z-index: 20;
   color: #111;
-
-  z-index: 30;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* =========================================================
-   =========================================================
-   ABOUT ILHAAM GROUP
-   =========================================================
-========================================================= */
-
-.about-section {
-  /* background: #1c1b19; */
-
+/* =======================================================
+   SPRING 22 LAYOUT SPLIT (Screenshot 2026-07-03 at 3.41.02 PM.jpg)
+======================================================= */
+.spring-section-view {
+  background: #fcfcfc;
   display: flex;
-
-  align-items: stretch;
-
-  justify-content: center;
-
-  gap: 0;
-
-  padding: 10px 14px;
-
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #000;
 }
 
-
-/* =========================================================
-   SIDE IMAGE PANELS
-========================================================= */
-
-.about-side {
-  position: relative;
-
-  height: calc(
-    100% - 20px
-  );
-
-  overflow: hidden;
-
-  background: #25221e;
-
-  flex-shrink: 0;
-}
-
-
-.about-side-left {
-  width: 17%;
-
-  border-radius:
-    2px 0 0 2px;
-}
-
-
-.about-side-right {
-  width: 17%;
-
-  border-radius:
-    0 2px 2px 0;
-}
-
-
-.about-side img {
-  width: 100%;
-
+.spring-panel-left {
+  width: 63%;
   height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-
-  transform: scale(1.04);
-}
-
-
-.side-image-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.12),
-      rgba(0,0,0,0.25)
-    );
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   LEFT SIDE TEXT
-========================================================= */
-
-.about-side-top {
-  position: absolute;
-
-  top: 35px;
-
-  left: 38px;
-
-  color: white;
-
-  font-size: 8px;
-
-  font-weight: 600;
-
-  letter-spacing: 2.4px;
-}
-
-
-.about-side-bottom {
-  position: absolute;
-
-  left: 38px;
-
-  bottom: 40px;
-
-  color: white;
-}
-
-
-.about-side-bottom span,
-.about-right-bottom span {
-  display: block;
-
-  width: 1px;
-
-  height: 30px;
-
-  background: rgba(
-    255,
-    255,
-    255,
-    0.65
-  );
-
-  margin-bottom: 13px;
-}
-
-
-.about-side-bottom p,
-.about-right-bottom p {
-  font-size: 7px;
-
-  line-height: 1.8;
-
-  letter-spacing: 2.2px;
-
-  font-weight: 500;
-}
-
-
-/* =========================================================
-   RIGHT SIDE
-========================================================= */
-
-.about-right-title {
-  position: absolute;
-
-  top: 24px;
-
-  left: 16px;
-
-  color: #f7eee4;
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: clamp(
-    48px,
-    5vw,
-    78px
-  );
-
-  line-height: 0.8;
-
-  letter-spacing: -2px;
-
-  white-space: nowrap;
-}
-
-
-.about-right-bottom {
-  position: absolute;
-
-  right: 30px;
-
-  bottom: 40px;
-
-  color: white;
-
-  text-align: right;
-}
-
-
-.about-right-bottom span {
-  margin-left: auto;
-}
-
-
-/* =========================================================
-   CENTRAL WHITE CARD
-========================================================= */
-
-.about-center-card {
-  width: 66%;
-
-  height: calc(
-    100% - 20px
-  );
-
-  background: #f6f4ef;
-
-  position: relative;
-
-  z-index: 5;
-
-  padding:
-    34px 40px 25px;
-
+  border-right: 1px solid #111;
+  background: #fff;
   display: flex;
-
   flex-direction: column;
-
-  overflow: hidden;
-}
-
-
-/* =========================================================
-   TOP HEADER
-========================================================= */
-
-.about-card-header {
-  display: flex;
-
   justify-content: space-between;
-
-  align-items: center;
-
-  width: 100%;
-
-  flex-shrink: 0;
-
-  color: #26231f;
-
-  font-size: 8px;
-
-  font-weight: 600;
-
-  letter-spacing: 2.5px;
-
-  text-transform: uppercase;
-
-  margin-bottom: 26px;
+  padding: 40px;
 }
 
-
-/* =========================================================
-   MAIN VIDEO / IMAGE
-========================================================= */
-
-.about-video {
-  position: relative;
-
-  width: 100%;
-
-  height: 43%;
-
-  min-height: 260px;
-
-  overflow: hidden;
-
-  border-radius: 6px;
-
-  background: #ddd;
-
-  flex-shrink: 0;
-}
-
-
-.about-video img {
-  width: 100%;
-
+.spring-panel-right {
+  width: 37%;
   height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  transition:
-    transform 1.2s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 0px 0px 15px; 
 }
 
-
-.about-video:hover img {
-  transform: scale(1.025);
+/* Headings */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
 
+.panel-title-large {
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 0.85;
+}
 
-.about-image-shade {
+.layout-header-offset { margin-left: -4px; }
+
+.panel-meta-top {
+  text-align: right;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+/* Center Editorial Image Blocks */
+.panel-video-container {
+  position: relative;
+  width: 100%;
+  height: 52%;
+  background: #eaeaea;
+  overflow: hidden;
+}
+
+.spring-panel-right .panel-video-container { height: 86%; }
+.panel-media { width: 100%; height: 100%; object-fit: cover; }
+
+/* Interactive Graphic Overlays */
+.play-button-overlay {
   position: absolute;
-
   inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.03),
-      rgba(0,0,0,0.12)
-    );
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   PLAY BUTTON
-========================================================= */
-
-.about-play {
-  position: absolute;
-
-  left: 50%;
-
-  top: 50%;
-
-  transform:
-    translate(-50%, -50%);
-
-  width: 64px;
-
-  height: 64px;
-
-  border-radius: 50%;
-
-  border: 1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.9
-    );
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
-
-  backdrop-filter: blur(5px);
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
 }
 
-
-.about-play:hover {
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.2
-    );
-
-  transform:
-    translate(-50%, -50%)
-    scale(1.08);
+.play-icon {
+  width: 75px;
+  height: 75px;
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.1));
 }
 
-
-.about-play span {
-  width: 0;
-
-  height: 0;
-
-  border-top:
-    7px solid transparent;
-
-  border-bottom:
-    7px solid transparent;
-
-  border-left:
-    11px solid white;
-
-  margin-left: 3px;
-}
-
-
-/* =========================================================
-   ABOUT CONTENT
-========================================================= */
-
-.about-content {
-  padding-top: 22px;
-
-  max-width: 720px;
-}
-
-
-.about-content h2 {
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-weight: 400;
-
-  font-size: clamp(
-    44px,
-    4.7vw,
-    74px
-  );
-
-  line-height: 0.84;
-
-  letter-spacing: -2.7px;
-
-  color: #171614;
-}
-
-
-.about-content p {
-  max-width: 620px;
-
-  margin-top: 16px;
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 17px;
-
-  line-height: 1.18;
-
-  color: #504b45;
-}
-
-
-/* =========================================================
-   STORY BUTTON
-========================================================= */
-
-.about-story-button {
-  margin-top: 23px;
-
-  height: 39px;
-
-  min-width: 215px;
-
-  padding:
-    0 16px;
-
+/* Lookbook Footers */
+.panel-footer-details {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 30px;
-
-  border: 1px solid #4c4944;
-
-  background: transparent;
-
-  color: #25231f;
-
-  cursor: pointer;
-
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
+.view-link {
   font-size: 8px;
-
-  font-weight: 600;
-
-  letter-spacing: 2.2px;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-
-.about-story-button:hover {
-  background: #1b1a18;
-
-  color: white;
-}
-
-
-.about-story-button span:last-child {
-  font-size: 14px;
-
-  letter-spacing: 0;
-}
-
-
-/* =========================================================
-   CARD FOOTER
-========================================================= */
-
-.about-card-footer {
-  margin-top: auto;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: flex-end;
-
-  color: #8c8780;
-
-  font-size: 8px;
-
   letter-spacing: 1.5px;
+  font-weight: bold;
+  color: #777;
+  margin-bottom: -2px;
 }
 
-
-.about-page-number {
-  margin-left: auto;
+.panel-title-huge {
+  font-size: clamp(55px, 8vw, 115px);
+  font-weight: 900;
+  letter-spacing: -5px;
+  line-height: 0.8;
 }
 
-
-/* =========================================================
-   DESKTOP LARGE
-========================================================= */
-
-@media (min-width: 1400px) {
-
-  .about-center-card {
-    padding:
-      38px 48px 28px;
-  }
-
-
-  .about-video {
-    height: 46%;
-  }
-
-
-  .about-content {
-    padding-top: 26px;
-  }
-
-
-  .about-content p {
-    font-size: 19px;
-
-    max-width: 650px;
-  }
-
+.fraction-align {
+  font-size: 0.78em;
+  letter-spacing: -3px;
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1100px) {
-
-  .brand-logo {
-    width: 260px;
-  }
-
-
-  .brand-tagline {
-    font-size: 60px;
-  }
-
-
-  .hero-left {
-    width: 40%;
-  }
-
-
-  .hero-right {
-    width: 60%;
-  }
-
-
-  .hero-grid {
-    gap: 8px;
-
-    padding-right: 15px;
-  }
-
-
-  .grid-column {
-    gap: 8px;
-  }
-
-
-  .grid-card {
-    height: 210px;
-  }
-
-
-  .grid-card.tall {
-    height: 330px;
-  }
-
-
-  .about-center-card {
-    width: 68%;
-
-    padding:
-      25px 28px 20px;
-  }
-
-
-  .about-side {
-    width: 16%;
-  }
-
-
-  .about-side-top {
-    left: 18px;
-  }
-
-
-  .about-side-bottom {
-    left: 18px;
-  }
-
-
-  .about-right-title {
-    left: 8px;
-  }
-
-
-  .about-content h2 {
-    font-size: 48px;
-  }
-
-
-  .about-content p {
-    font-size: 14px;
-  }
-
+.panel-footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 4px;
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 800px) {
-
-  .hero,
-  .view-panel {
-    height: 100svh;
-  }
-
-
-  .brand-logo {
-    width: 230px;
-  }
-
-
-  .brand-tagline {
-    font-size: 50px;
-
-    line-height: 0.9;
-  }
-
-
-  .brand-subtitle {
-    font-size: 8px;
-
-    letter-spacing: 3px;
-  }
-
-
-  .discover-group {
-    margin-top: 45px;
-  }
-
-
-  .hero-left {
-    width: 45%;
-  }
-
-
-  .hero-right {
-    width: 55%;
-  }
-
-
-  .portfolio-heading {
-    font-size: 38px;
-  }
-
-
-  .portfolio-description {
-    font-size: 12px;
-  }
-
-
-  .hero-grid {
-    height: 88%;
-  }
-
-
-  .grid-card {
-    height: 180px;
-  }
-
-
-  .grid-card.tall {
-    height: 280px;
-  }
-
-
-  /* ABOUT */
-
-  .about-center-card {
-    width: 72%;
-
-    padding:
-      22px 22px 18px;
-  }
-
-
-  .about-side {
-    width: 14%;
-  }
-
-
-  .about-video {
-    min-height: 220px;
-
-    height: 42%;
-  }
-
-
-  .about-content h2 {
-    font-size: 39px;
-
-    letter-spacing: -1.8px;
-  }
-
-
-  .about-content p {
-    font-size: 12px;
-
-    line-height: 1.25;
-  }
-
-
-  .about-story-button {
-    min-width: 190px;
-
-    height: 37px;
-  }
-
-
-  .about-side-top {
-    font-size: 6px;
-
-    letter-spacing: 1.5px;
-  }
-
-
-  .about-side-bottom p,
-  .about-right-bottom p {
-    font-size: 5px;
-
-    letter-spacing: 1.3px;
-  }
-
-
-  .about-right-title {
-    font-size: 43px;
-  }
-
+.category-tag {
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .hero,
-  .view-panel {
-    height: 100svh;
-  }
-
-
-  /* =======================================================
-     BRAND
-  ======================================================= */
-
-  .brand-center {
-    width: 92vw;
-
-    top: 47%;
-  }
-
-
-  .brand-logo {
-    width: min(
-      230px,
-      58vw
-    );
-
-    max-height: 180px;
-  }
-
-
-  .brand-divider {
-    width: 70px;
-
-    margin-top: 20px;
-
-    margin-bottom: 20px;
-  }
-
-
-  .brand-tagline {
-    font-size: clamp(
-      38px,
-      10.5vw,
-      54px
-    );
-
-    letter-spacing: -1px;
-  }
-
-
-  .brand-subtitle {
-    margin-top: 22px;
-
-    gap: 8px;
-
-    font-size: 7px;
-
-    letter-spacing: 2px;
-  }
-
-
-  .brand-subtitle i {
-    font-size: 9px;
-  }
-
-
-  .discover-group {
-    margin-top: 38px;
-
-    font-size: 7px;
-
-    letter-spacing: 2px;
-  }
-
-
-  .discover-arrow {
-    font-size: 23px;
-  }
-
-
-  .gold-flow-left {
-    width: 380px;
-
-    height: 620px;
-
-    left: -270px;
-
-    bottom: -330px;
-  }
-
-
-  .gold-flow-right {
-    width: 300px;
-
-    height: 520px;
-
-    right: -180px;
-
-    top: -310px;
-  }
-
-
-  .brand-bottom {
-    left: 15px;
-
-    right: 15px;
-
-    bottom: 18px;
-
-    font-size: 5px;
-
-    letter-spacing: 1.3px;
-  }
-
-
-  .brand-bottom-center {
-    display: none;
-  }
-
-
-  .brand-est {
-    gap: 7px;
-  }
-
-
-  .brand-tomorrow {
-    gap: 7px;
-
-    max-width: 160px;
-  }
-
-
-  .small-line {
-    width: 20px;
-  }
-
-
-  /* =======================================================
-     PORTFOLIO
-  ======================================================= */
-
-  .hero-left {
-    width: 100%;
-
-    height: 100%;
-  }
-
-
-  .hero-right {
-    width: 100%;
-
-    height: 48%;
-
-    top: 4%;
-
-    z-index: 5;
-
-    opacity: 0.28;
-  }
-
-
-  .portfolio-number {
-    top: 8%;
-
-    left: 7%;
-
-    font-size: 9px;
-
-    gap: 10px;
-  }
-
-
-  .portfolio-line {
-    width: 50px;
-  }
-
-
-  .portfolio-copy {
-    left: 7%;
-
-    right: 7%;
-
-    bottom: 10%;
-
-    top: auto;
-
-    width: auto;
-
-    max-width: 350px;
-  }
-
-
-  .portfolio-heading {
-    font-size: clamp(
-      36px,
-      10vw,
-      48px
-    );
-
-    line-height: 0.9;
-  }
-
-
-  .portfolio-heading strong {
-    white-space: normal;
-  }
-
-
-  .portfolio-description {
-    margin-top: 17px;
-
-    max-width: 320px;
-
-    font-size: 10px;
-
-    line-height: 1.55;
-  }
-
-
-  .portfolio-button {
-    width: 205px;
-
-    min-height: 42px;
-
-    margin-top: 18px;
-
-    padding: 0 14px;
-
-    font-size: 8px;
-
-    letter-spacing: 1.3px;
-  }
-
-
-  .hero-grid {
-    width: 100%;
-
-    height: 100%;
-
-    gap: 4px;
-
-    padding: 0 6px;
-  }
-
-
-  .grid-column {
-    gap: 4px;
-  }
-
-
-  .grid-card {
-    height: 125px;
-  }
-
-
-  .grid-card.tall {
-    height: 180px;
-  }
-
-
-  .column-1 {
-    margin-top: 25px;
-  }
-
-
-  .column-2 {
-    margin-top: 0;
-  }
-
-
-  .column-3 {
-    margin-top: 18px;
-  }
-
-
-  .column-4 {
-    margin-top: -5px;
-  }
-
-
-  .card-overlay {
-    left: 6px;
-
-    right: 6px;
-
-    bottom: 6px;
-  }
-
-
-  .card-line {
-    width: 18px;
-
-    margin-bottom: 4px;
-  }
-
-
-  .card-bottom span:first-child {
-    font-size: 4.5px;
-
-    letter-spacing: 0.7px;
-  }
-
-
-  .card-arrow {
-    font-size: 9px;
-  }
-
-
-  .portfolio-footer,
-  .hero-footer {
-    display: none;
-  }
-
-
-  /* =======================================================
-     ABOUT — MOBILE
-  ======================================================= */
-
-  .about-section {
-    display: block;
-
-    padding: 0;
-
-    background: #f6f4ef;
-
-    overflow-y: auto;
-
-    overflow-x: hidden;
-  }
-
-
-  /*
-     On mobile we don't keep the desktop side strips
-     because they make the central editorial content
-     too narrow.
-  */
-
-  .about-side {
-    display: none;
-  }
-
-
-  .about-center-card {
-    width: 100%;
-
-    height: 100%;
-
-    min-height: 100svh;
-
-    padding:
-      22px 18px 18px;
-
-    display: flex;
-
-    overflow-y: auto;
-
-    overflow-x: hidden;
-  }
-
-
-  .about-card-header {
-    margin-bottom: 18px;
-
-    font-size: 6.5px;
-
-    letter-spacing: 1.7px;
-  }
-
-
-  .about-video {
-    width: 100%;
-
-    height: 38vh;
-
-    min-height: 190px;
-
-    max-height: 330px;
-
-    border-radius: 4px;
-  }
-
-
-  .about-play {
-    width: 55px;
-
-    height: 55px;
-  }
-
-
-  .about-play span {
-    border-top-width: 6px;
-
-    border-bottom-width: 6px;
-
-    border-left-width: 9px;
-  }
-
-
-  .about-content {
-    padding-top: 22px;
-
-    max-width: 100%;
-  }
-
-
-  .about-content h2 {
-    font-size: clamp(
-      39px,
-      11vw,
-      56px
-    );
-
-    line-height: 0.86;
-
-    letter-spacing: -1.7px;
-  }
-
-
-  .about-content p {
-    max-width: 95%;
-
-    margin-top: 17px;
-
-    font-size: 15px;
-
-    line-height: 1.15;
-  }
-
-
-  .about-story-button {
-    width: 205px;
-
-    min-width: 0;
-
-    height: 40px;
-
-    margin-top: 21px;
-
-    font-size: 7px;
-
-    letter-spacing: 1.7px;
-  }
-
-
-  .about-card-footer {
-    padding-top: 25px;
-
-    padding-bottom: 3px;
-
-    font-size: 7px;
-  }
-
+.shop-btn {
+  background: transparent;
+  border: 1px solid #111;
+  padding: 8px 18px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: background 0.3s, color 0.3s;
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-  .brand-logo {
-    width: 190px;
-  }
-
-
-  .brand-tagline {
-    font-size: 34px;
-  }
-
-
-  .brand-subtitle {
-    font-size: 6px;
-
-    letter-spacing: 1.5px;
-  }
-
-
-  .discover-group {
-    margin-top: 30px;
-  }
-
-
-  .portfolio-heading {
-    font-size: 32px;
-  }
-
-
-  .portfolio-description {
-    font-size: 9px;
-  }
-
-
-  .portfolio-button {
-    width: 185px;
-
-    min-height: 39px;
-
-    font-size: 7px;
-  }
-
-
-  .grid-card {
-    height: 105px;
-  }
-
-
-  .grid-card.tall {
-    height: 150px;
-  }
-
-
-  /* ABOUT */
-
-  .about-center-card {
-    padding:
-      18px 14px 15px;
-  }
-
-
-  .about-card-header {
-    font-size: 5.5px;
-
-    letter-spacing: 1.3px;
-
-    margin-bottom: 14px;
-  }
-
-
-  .about-video {
-    height: 34vh;
-
-    min-height: 165px;
-  }
-
-
-  .about-content {
-    padding-top: 18px;
-  }
-
-
-  .about-content h2 {
-    font-size: 35px;
-  }
-
-
-  .about-content p {
-    font-size: 13px;
-
-    margin-top: 14px;
-  }
-
-
-  .about-story-button {
-    width: 185px;
-
-    height: 37px;
-
-    font-size: 6.5px;
-  }
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-
-    animation-iteration-count: 1 !important;
-
-    transition-duration: 0.01ms !important;
-  }
-
+.shop-btn:hover {
+  background: #111;
+  color: #fff;
 }
