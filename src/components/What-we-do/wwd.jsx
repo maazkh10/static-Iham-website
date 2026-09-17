@@ -7,65 +7,129 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const text =
-  "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker";
+  "Founded in 2010, ILHAAM GROUP is a diversified luxury and lifestyle group built around a shared vision: creating exceptional experiences across industries.";
 
+const secondText =
+  "From fashion retail and events to travel, hospitality and strategic ventures, our businesses each bring a distinct perspective while remaining connected by the same commitment to quality, innovation and experience.";
 
 export default function Whtwedo() {
+  const section = useRef(null);
 
-const section = useRef()
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
 
-useLayoutEffect(()=>{
-    const ctx = gsap.context(()=>{
-        gsap.to(".bg-title" , {
-            y : -180 , 
-            ease : "none",
-            scrollTrigger : {
-                trigger : section.current,
-                start : "top bottom",
-                end : "bottom top",
-                scrub : true
-            }
-        })
-
-
-gsap.to(".word", {
-        color: "#111",
-        opacity: 1,
-        stagger: 0.03,
+      // Large background typography
+      gsap.to(".bg-title", {
+        y: -160,
         ease: "none",
         scrollTrigger: {
-          trigger: ".paragraph",
-          start: "top 75%",
-          end: "bottom center",
+          trigger: section.current,
+          start: "top bottom",
+          end: "bottom top",
           scrub: 1,
         },
       });
 
-    } , section)
+      // First paragraph reveal
+      gsap.to(".word-one", {
+        color: "#111",
+        opacity: 1,
+        stagger: 0.025,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".paragraph-one",
+          start: "top 80%",
+          end: "bottom 55%",
+          scrub: 1,
+        },
+      });
+
+      // Second paragraph reveal
+      gsap.to(".word-two", {
+        color: "#111",
+        opacity: 1,
+        stagger: 0.025,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".paragraph-two",
+          start: "top 80%",
+          end: "bottom 55%",
+          scrub: 1,
+        },
+      });
+
+      // CTA
+      gsap.from(".about-cta", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".about-cta",
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+    }, section);
 
     return () => ctx.revert();
-},[])
+  }, []);
 
-return(
+  return (
     <section className="our-word" ref={section}>
-<h1 className="bg-title">What We DO</h1>
 
-<div className="content">
-<p className="paragraph">
-{text.split("").map((word , ind )=>(
-    <span className="word" key={ind}>
-        {word} 
-    </span>
-))}
-</p>
+      {/* Background Typography */}
+      <h1 className="bg-title">
+        ONE VISION
+      </h1>
 
-<div className="scroll-text">
-Scrool to discover
-</div>
+      <div className="content">
 
-</div>
+        {/* Section Label */}
+        <div className="section-label">
+          <span className="label-line"></span>
+          <span>ILHAAM GROUP</span>
+        </div>
+
+        {/* Main Statement */}
+        <p className="paragraph paragraph-one">
+          {text.split("").map((letter, index) => (
+            <span className="word word-one" key={index}>
+              {letter}
+            </span>
+          ))}
+        </p>
+
+        {/* Supporting Statement */}
+        <p className="paragraph paragraph-two">
+          {secondText.split("").map((letter, index) => (
+            <span className="word word-two" key={index}>
+              {letter}
+            </span>
+          ))}
+        </p>
+
+        {/* CTA */}
+        <div className="about-cta">
+          <a href="/about" className="learn-more">
+            <span>LEARN MORE</span>
+
+            <span className="arrow">
+              ↗
+            </span>
+          </a>
+        </div>
+
+        {/* Closing Statement */}
+        <div className="closing-line">
+          <span>One group.</span>
+          <span>Multiple worlds.</span>
+          <span>One shared vision.</span>
+        </div>
+
+      </div>
 
     </section>
-)
-
+  );
 }

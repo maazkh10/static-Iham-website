@@ -1,85 +1,389 @@
-.our-work{
-    min-height:100vh;
-    background:#f6f4ef;
-    position:relative;
-    overflow:hidden;
+/* =========================================
+   ILHAAM GROUP — ABOUT INTRO
+========================================= */
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.our-word {
+  width: 100%;
+  min-height: 100vh;
 
-    padding:180px 8%;
+  background: #f6f4ef;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 160px 8%;
 }
 
-.bg-title{
 
-    position:absolute;
-    top:40px;
-    left:50%;
+/* =========================================
+   LARGE BACKGROUND TITLE
+========================================= */
 
-    transform:translateX(-50%);
+.bg-title {
+  position: absolute;
 
-    font-family:"Cormorant Garamond", serif;
-    font-size:clamp(100px,13vw,180px);
-    font-weight:500;
-    letter-spacing:8px;
-    line-height:.9;
+  top: 45px;
+  left: 50%;
 
-    white-space:nowrap;
+  transform: translateX(-50%);
 
-    color:transparent;
-    -webkit-text-stroke:2px rgba(0, 0, 0, 0.12);
+  margin: 0;
 
-    pointer-events:none;
-    user-select:none;
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(100px, 15vw, 210px);
+
+  font-weight: 400;
+
+  line-height: 0.85;
+
+  letter-spacing: 10px;
+
+  white-space: nowrap;
+
+  color: transparent;
+
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.12);
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 1;
 }
 
-.content{
 
-    width:100%;
-    max-width:1300px;
+/* =========================================
+   CONTENT
+========================================= */
 
-    margin-top:120px;
+.content {
+  width: 100%;
 
-    position:relative;
-    z-index:2;
+  max-width: 1280px;
 
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 110px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
 }
 
-.paragraph{
 
-    width:80%;
-    max-width:1050px;
+/* =========================================
+   SECTION LABEL
+========================================= */
 
-    font-size:clamp(30px,2.4vw,44px);
+.section-label {
+  display: flex;
 
-    font-weight:300;
-    line-height:1.75;
-    letter-spacing:.02em;
+  align-items: center;
 
-    color:#222;
+  gap: 16px;
+
+  margin-bottom: 42px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 3px;
+
+  color: #777;
+
+  text-transform: uppercase;
 }
 
-.word{
+.label-line {
+  width: 40px;
 
-    opacity:.15;
-    color:#777;
-    transition:.3s ease;
+  height: 1px;
+
+  background: #999;
 }
 
-.scroll-text{
 
-    margin-top:80px;
+/* =========================================
+   PARAGRAPHS
+========================================= */
 
-    padding-left:8px;
+.paragraph {
+  width: 85%;
 
-    font-size:13px;
-    letter-spacing:2px;
+  max-width: 1120px;
 
-    text-transform:uppercase;
+  margin: 0;
 
-    color:#777;
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(30px, 3vw, 48px);
+
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  letter-spacing: 0.005em;
+}
+
+
+/* First paragraph */
+
+.paragraph-one {
+  margin-bottom: 45px;
+}
+
+
+/* Second paragraph */
+
+.paragraph-two {
+  max-width: 980px;
+
+  font-size: clamp(22px, 2vw, 32px);
+
+  line-height: 1.55;
+}
+
+
+/* Character animation */
+
+.word {
+  color: #999;
+
+  opacity: 0.18;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.about-cta {
+  margin-top: 55px;
+}
+
+
+.learn-more {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 45px;
+
+  min-width: 190px;
+
+  padding: 17px 20px;
+
+  border: 1px solid #222;
+
+  color: #111;
+
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.45s ease,
+    color 0.45s ease,
+    gap 0.45s ease;
+}
+
+
+.arrow {
+  font-size: 17px;
+
+  line-height: 1;
+
+  transition: transform 0.45s ease;
+}
+
+
+.learn-more:hover {
+  background: #111;
+
+  color: #fff;
+
+  gap: 58px;
+}
+
+
+.learn-more:hover .arrow {
+  transform: translate(4px, -4px);
+}
+
+
+/* =========================================
+   CLOSING LINE
+========================================= */
+
+.closing-line {
+  width: 100%;
+
+  margin-top: 100px;
+
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  color: #777;
+}
+
+
+.closing-line span:last-child {
+  color: #111;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .our-word {
+    padding: 140px 7%;
+  }
+
+  .content {
+    margin-top: 100px;
+  }
+
+  .paragraph {
+    width: 95%;
+  }
+
+  .paragraph-two {
+    width: 85%;
+  }
+
+  .bg-title {
+    font-size: 15vw;
+
+    letter-spacing: 5px;
+  }
+
+  .closing-line {
+    gap: 20px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .our-word {
+    min-height: 100svh;
+
+    padding: 120px 24px;
+  }
+
+  .bg-title {
+    top: 65px;
+
+    font-size: 19vw;
+
+    letter-spacing: 2px;
+
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.12);
+  }
+
+  .content {
+    margin-top: 75px;
+  }
+
+  .section-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 28px;
+  }
+
+  .label-line {
+    width: 25px;
+  }
+
+  .paragraph {
+    width: 100%;
+
+    font-size: 29px;
+
+    line-height: 1.45;
+  }
+
+  .paragraph-one {
+    margin-bottom: 35px;
+  }
+
+  .paragraph-two {
+    width: 100%;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+  }
+
+  .about-cta {
+    margin-top: 40px;
+  }
+
+  .learn-more {
+    min-width: 170px;
+
+    padding: 15px 17px;
+
+    gap: 30px;
+  }
+
+  .closing-line {
+    margin-top: 65px;
+
+    padding-top: 22px;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
 }
