@@ -35,9 +35,9 @@ function Home() {
         <section className="page">
           <FounderVision />
         </section>
-        <section className="page">
+        {/* <section className="page">
           <Team />
-        </section>
+        </section> */}
 
 
       </main>

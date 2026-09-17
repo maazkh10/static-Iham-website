@@ -1,51 +1,303 @@
-.video-section{
+/* =========================================
+   VIDEO SECTION
+========================================= */
 
-    width:100%;
-    height:100vh;
+.video-section {
+  width: 100%;
+  height: 100vh;
 
-    background:#f5f5f5;
+  background: #f5f5f3;
 
-    display:flex;
-    flex-direction:column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    justify-content:center;
-    align-items:center;
+  overflow: hidden;
 
-    overflow:hidden;
-
-    position:relative;
-
+  position: relative;
 }
 
-.video-title{
 
-    font-size:70px;
-    font-weight:700;
-    letter-spacing:4px;
+/* =========================================
+   CONTENT
+========================================= */
 
-    margin-bottom:60px;
+.video-content {
+  position: absolute;
 
-    z-index:5;
+  top: 13%;
+  left: 50%;
 
+  transform: translateX(-50%);
+
+  width: 100%;
+
+  text-align: center;
+
+  z-index: 5;
+
+  pointer-events: none;
 }
 
-.video-wrapper{
 
-    overflow:hidden;
+/* =========================================
+   EYEBROW
+========================================= */
 
-    box-shadow:0 30px 80px rgba(0,0,0,.18);
+.video-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
 
-    position:relative;
+  margin-bottom: 18px;
 
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 3px;
+
+  color: #777;
+
+  text-transform: uppercase;
 }
 
-.video-wrapper video{
+.eyebrow-line {
+  width: 35px;
+  height: 1px;
 
-    width:100%;
-    height:100%;
+  background: #bdbdbd;
+}
 
-    object-fit:cover;
 
-    display:block;
+/* =========================================
+   MAIN TITLE
+========================================= */
 
+.video-title {
+  margin: 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(58px, 7vw, 110px);
+
+  font-weight: 400;
+
+  letter-spacing: -2px;
+
+  line-height: 0.95;
+
+  color: #111;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.video-description {
+  margin: 24px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+  letter-spacing: 1px;
+
+  color: #777;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.video-wrapper {
+  overflow: hidden;
+
+  position: relative;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.18);
+
+  z-index: 2;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   VIDEO ELEMENT
+========================================= */
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================
+   CINEMATIC OVERLAY
+========================================= */
+
+.video-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08),
+      transparent 35%,
+      rgba(0, 0, 0, 0.12)
+    );
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.video-scroll {
+  position: absolute;
+
+  bottom: 38px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+
+  z-index: 10;
+
+  color: #555;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   SCROLL LINE
+========================================= */
+
+.scroll-line {
+  width: 1px;
+
+  height: 42px;
+
+  background: #d0d0d0;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+.scroll-line span {
+  position: absolute;
+
+  top: -100%;
+
+  left: 0;
+
+  width: 1px;
+
+  height: 50%;
+
+  background: #111;
+
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+
+@keyframes scrollLine {
+  0% {
+    top: -50%;
+  }
+
+  50% {
+    top: 100%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .video-content {
+    top: 12%;
+  }
+
+  .video-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    gap: 12px;
+  }
+
+  .eyebrow-line {
+    width: 22px;
+  }
+
+  .video-title {
+    font-size: 56px;
+
+    letter-spacing: -1px;
+  }
+
+  .video-description {
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    padding: 0 20px;
+  }
+
+  .video-wrapper {
+    width: 82vw !important;
+    height: 55vh !important;
+  }
+
+  .video-scroll {
+    bottom: 24px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
 }

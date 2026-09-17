@@ -11,17 +11,30 @@ gsap.registerPlugin(ScrollTrigger);
    IMAGES
 ========================================================= */
 
-const images = [
-  "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&q=85",
-  "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1200&q=85",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=85",
-  "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1200&q=85",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=85",
-  "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=85",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&q=85",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=85",
-];
+// const images = [
+//   "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&q=85",
+//   "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1200&q=85",
+//   "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=85",
+//   "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1200&q=85",
+//   "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=85",
+//   "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=85",
+//   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&q=85",
+//   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=85",
+// ];
 
+const images = [
+  "/images/lux&Re.png",
+  "images/events.png",
+  "/images/traveling.png",
+  "/images/craft.png",
+  "images/hospitality.png",
+  "images/partner&loyalti.png",
+  "images/home8.png",
+  "images/trveling-home.png",
+  "images/sec-2-1.jpeg",
+  "images/sec-2-2.jpeg",
+  "images/sec-2-3.jpeg"
+]
 
 /* =========================================================
    PORTFOLIO DATA
@@ -37,7 +50,7 @@ const portfolioItems = [
     image: images[1],
   },
   {
-    title: "TRAVEL & HOSPITALITY",
+    title: "TRAVEL ",
     image: images[2],
   },
   {
@@ -45,7 +58,7 @@ const portfolioItems = [
     image: images[3],
   },
   {
-    title: "STRATEGIC VENTURES",
+    title: "Hospitality",
     image: images[4],
   },
   {
@@ -256,7 +269,7 @@ export default function Hero() {
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
-          end: "+=70000",
+          end: "+=4000",
           scrub: 1,
           pin: true,
           anticipatePin: 1,
@@ -626,7 +639,7 @@ export default function Hero() {
               </p>
 
 
-              <button className="portfolio-button">
+              {/* <button className="portfolio-button">
 
                 <span>
                   EXPLORE OUR COMPANIES
@@ -636,7 +649,7 @@ export default function Hero() {
                   →
                 </span>
 
-              </button>
+              </button> */}
 
             </div>
 
@@ -732,7 +745,7 @@ export default function Hero() {
           </div>
 
 
-          <div className="hero-footer">
+          {/* <div className="hero-footer">
 
             <span>
               PLAYFILM
@@ -746,7 +759,7 @@ export default function Hero() {
               2026
             </span>
 
-          </div>
+          </div> */}
 
         </div>
 
@@ -765,7 +778,7 @@ export default function Hero() {
           <div className="about-side about-side-left">
 
             <img
-              src={images[4]}
+              src={images[8]}
               alt="ILHAAM lifestyle"
             />
 
@@ -824,7 +837,7 @@ export default function Hero() {
             <div className="about-video">
 
               <img
-                src={images[2]}
+                src={images[9]}
                 alt="ILHAAM Group experience"
               />
 
@@ -902,7 +915,7 @@ export default function Hero() {
           <div className="about-side about-side-right">
 
             <img
-              src={images[3]}
+              src={images[10]}
               alt="ILHAAM Group lifestyle"
             />
 
