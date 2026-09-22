@@ -414,22 +414,41 @@ export default function FounderVision() {
           </div>
 
 
-          <p className="narrative-text">
+          {/* =================================================
+              FOUNDER MESSAGE
+          ================================================= */}
 
-            At ILHAAM GROUP, we believe that the most
-            meaningful brands are built around something
-            greater than a product or a moment.
+          <div className="narrative-text">
+
+            <p>
+              “ILHAAM GROUP was built from a belief that
+              luxury is not defined by a single product,
+              place or moment — but by the experience
+              created around it.
+            </p>
 
             <br />
+
+            <p>
+              Since 2010, our journey has been shaped by
+              curiosity, relationships and the ambition to
+              create businesses that bring meaningful value
+              to the lives of our clients. From fashion and
+              events to travel, hospitality and strategic
+              ventures, every part of the group reflects the
+              same commitment to quality, creativity and
+              thoughtful service.
+            </p>
+
             <br />
 
-            They are built around people, experiences and
-            ideas that remain long after the first
-            impression. Our vision is to create businesses
-            that carry purpose, character and a lasting
-            sense of distinction.
+            <p>
+              As we continue to grow, our vision remains
+              unchanged: to build with purpose, evolve with
+              intention and create experiences that endure.”
+            </p>
 
-          </p>
+          </div>
 
 
           {/* =================================================
@@ -450,11 +469,11 @@ export default function FounderVision() {
 
 
             <h3 className="founder-name">
-              John Williams
+              Ilham Abbas
             </h3>
 
             <span className="founder-role">
-              Founder & Creative Director
+              Founder, President & CEO
             </span>
 
 

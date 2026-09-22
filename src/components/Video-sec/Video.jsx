@@ -1,3 +1,4 @@
+
 import { useLayoutEffect, useRef } from "react";
 import "./Video.css";
 
@@ -14,27 +15,45 @@ export default function Video() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial video size
+      // =========================================
+      // INITIAL VIDEO STATE
+      // =========================================
+
       gsap.set(videoRef.current, {
         width: "55vw",
         height: "320px",
         borderRadius: "24px",
       });
 
+      // =========================================
+      // VIDEO SCROLL TIMELINE
+      // =========================================
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
+
+          // IMPORTANT:
+          // Video waits until the Hero above it
+          // has completely finished and released.
           start: "top top",
+
+          // How long the Video section stays pinned
           end: "+=2200",
+
           scrub: 1,
+
           pin: true,
+
           anticipatePin: 1,
+
+          invalidateOnRefresh: true,
         },
       });
 
-      // --------------------------------
+      // =========================================
       // TITLE MOVEMENT
-      // --------------------------------
+      // =========================================
 
       tl.to(
         ".video-eyebrow",
@@ -80,9 +99,9 @@ export default function Video() {
         0
       );
 
-      // --------------------------------
+      // =========================================
       // VIDEO EXPANDS
-      // --------------------------------
+      // =========================================
 
       tl.to(
         videoRef.current,
@@ -96,9 +115,9 @@ export default function Video() {
         "<"
       );
 
-      // --------------------------------
-      // VIDEO GOES FULLSCREEN
-      // --------------------------------
+      // =========================================
+      // VIDEO → FULLSCREEN
+      // =========================================
 
       tl.to(videoRef.current, {
         width: "100vw",
@@ -115,12 +134,17 @@ export default function Video() {
   return (
     <section className="video-section" ref={sectionRef}>
 
-      {/* Editorial Header */}
+      {/* =========================================
+          EDITORIAL HEADER
+      ========================================= */}
+
       <div className="video-content">
 
         <div className="video-eyebrow">
           <span className="eyebrow-line"></span>
+
           <span>THE HOUSE / 2026</span>
+
           <span className="eyebrow-line"></span>
         </div>
 
@@ -136,27 +160,48 @@ export default function Video() {
 
       </div>
 
-      {/* Video */}
-      <div className="video-wrapper" ref={videoRef}>
+
+      {/* =========================================
+          VIDEO
+      ========================================= */}
+
+      <div
+        className="video-wrapper"
+        ref={videoRef}
+      >
+
         <video
           autoPlay
           muted
           loop
           playsInline
         >
-          <source src={fasionVideo} type="video/mp4" />
+          <source
+            // src={fasionVideo}
+             src="/images/video3.mp4"
+            type="video/mp4"
+          />
         </video>
 
         <div className="video-overlay"></div>
+
       </div>
 
-      {/* Scroll Indicator */}
+
+      {/* =========================================
+          SCROLL INDICATOR
+      ========================================= */}
+
       <div className="video-scroll">
-        <span>SCROLL TO EXPLORE</span>
+
+        <span>
+          SCROLL TO EXPLORE
+        </span>
 
         <div className="scroll-line">
           <span></span>
         </div>
+
       </div>
 
     </section>
