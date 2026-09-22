@@ -1,9 +1,9 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import "./Hero.css";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import fasionVideo from "../../assets/fasion.mp4";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -77,10 +77,29 @@ const portfolioItems = [
 
 
 export default function Hero() {
+
   const heroRef = useRef(null);
   const scrollContainerRef = useRef(null);
+const aboutVideoRef = useRef(null);
+const [isVideoPlaying, setVideoplaying] = useState(false);
+
+const handlePlayVideo = () => {
+  if (!aboutVideoRef.current) return;
+
+  aboutVideoRef.current
+    .play()
+    .then(() => {
+      setVideoplaying(true);
+    })
+    .catch((error) => {
+      console.error("Video is not playing:", error);
+    });
+};
+
+
 
   useLayoutEffect(() => {
+  
     const ctx = gsap.context(() => {
 
       /* =====================================================
@@ -430,15 +449,20 @@ export default function Hero() {
          HORIZONTAL MOVE TO ABOUT SECTION
       ===================================================== */
 
-      scrollTl.to(
-        scrollContainerRef.current,
-        {
-          x: "-100vw",
-          duration: 3,
-          ease: "power2.inOut",
-        },
-        "+=0.8"
-      );
+     scrollTl.to(
+  scrollContainerRef.current,
+  {
+    x: "-100vw",
+    duration: 3,
+    ease: "power2.inOut",
+  },
+  "+=0.8"
+);
+
+// Small pause before Hero releases
+scrollTl.to({}, {
+  duration: 0.6,
+});
 
     }, heroRef);
 
@@ -498,7 +522,7 @@ export default function Hero() {
               <div className="brand-logo-wrapper">
 
                 <img
-                  src="../../assets/ILHAM_GROUP_LOGO-03.png"
+                  src="images/ILHAM_GROUP_LOGO-12.png"
                   alt="ILHAAM GROUP"
                   className="brand-logo"
                 />
@@ -834,7 +858,7 @@ export default function Hero() {
 
             {/* MAIN IMAGE */}
 
-            <div className="about-video">
+            {/* <div className="about-video">
 
               <img
                 src={images[9]}
@@ -854,8 +878,40 @@ export default function Hero() {
 
               </button>
 
-            </div>
+            </div> */}
 
+<div className="about-video">
+
+  <video
+    ref={aboutVideoRef}
+    poster={images[9]}
+    playsInline
+    preload="metadata"
+    onPlay={() => setVideoplaying(true)}
+    onPause={() => setVideoplaying(false)}
+    onEnded={() => setVideoplaying(false)}
+  >
+    <source
+      // src={fasionVideo}
+      src="/images/video2.mp4"
+      type="video/mp4"
+    />
+  </video>
+
+  <div className="about-image-shade"></div>
+
+  {!isVideoPlaying && (
+    <button
+      className="about-play"
+      onClick={handlePlayVideo}
+      aria-label="Play ILHAAM Group film"
+      type="button"
+    >
+      <span></span>
+    </button>
+  )}
+
+</div>
 
             {/* MAIN CONTENT */}
 
