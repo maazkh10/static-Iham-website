@@ -143,20 +143,20 @@ export default function Video() {
         <div className="video-eyebrow">
           <span className="eyebrow-line"></span>
 
-          <span>THE HOUSE / 2026</span>
+          {/* <span>THE HOUSE / 2026</span> */}
 
           <span className="eyebrow-line"></span>
         </div>
 
-        <h1 className="video-title">
+        <h2 className="video-title">
           OUR FILM
-        </h1>
+        </h2>
 
-        <p className="video-description">
+        {/* <p className="video-description">
           A cinematic expression of movement, silhouette
           <br />
           and the art of modern elegance.
-        </p>
+        </p> */}
 
       </div>
 

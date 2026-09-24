@@ -940,9 +940,9 @@ scrollTl.to({}, {
                   DISCOVER OUR STORY
                 </span>
 
-                <span>
+                {/* <span>
                   ↗
-                </span>
+                </span> */}
 
               </button>
 

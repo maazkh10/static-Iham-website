@@ -8,4 +8,14 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  server: {
+    // Option 1: Allow specific ngrok host
+    // allowedHosts: ['regina-cycadlike-senatorially.ngrok-free.dev'],
+
+    // Option 2 (Alternative): Allow ALL .ngrok-free.dev subdomains automatically
+    // allowedHosts: ['.ngrok-free.dev'],
+
+    // Option 3 (Alternative): Allow all hosts (less secure)
+    allowedHosts: true,
+  }
 })

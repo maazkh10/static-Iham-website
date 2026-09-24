@@ -82,9 +82,9 @@ const content = {
   ecommerce: [
     {
       number: "01",
-      name: "ELILHAAM",
+      name: "EVENT MANAGEMENT",
       description:
-        "Luxury fashion online since 2010, with experts presenting creations from leading global designers.",
+        "End-to-end planning and delivery for exceptional events.",
       image:
         "/images/events&experiences1.png",
       link: "#elilhaam",
@@ -92,9 +92,9 @@ const content = {
 
     {
       number: "02",
-      name: "ELBAS",
+      name: "EXPERIENTIAL MARKETING",
       description:
-        "Refined occasionwear created with an atelier-inspired point of view.",
+        "Immersice experiences designed to bring brands to life.",
       image:
      "/images/events&experiences2.png",
        link: "#elbas",
@@ -102,9 +102,9 @@ const content = {
 
     {
       number: "03",
-      name: "CHIZELL",
+      name: "CORPORATE & PRIVATE EVENTS",
       description:
-        "Contemporary fashion designed for modern lifestyles.",
+        "Tailored experiences for brands, business and private clients.",
       image:
    
     "/images/events&experiences3.png",
@@ -113,9 +113,9 @@ const content = {
 
     {
       number: "04",
-      name: "GLOBAL RETAIL",
+      name: "COMMUNICATIONS & ACTIVATIONS",
       description:
-        "A global retail ecosystem connecting luxury brands with discerning customers.",
+        "Creative concepts that connect audiences, brands and moments.",
       image:
      "/images/events&experiences4.png",
         link: "#global-retail",
@@ -126,9 +126,9 @@ const content = {
   services: [
     {
       number: "01",
-      name: "EL EVENTS",
+      name: "DESTINATIONS & EXPERIENCES",
       description:
-        "Creating distinctive events and experiences with a refined approach.",
+        "Curated access to places, attractions and experiences worldwide.",
       image:
        "/images/travel&hospitality.png",
        link: "#events",
@@ -136,27 +136,27 @@ const content = {
 
     {
       number: "02",
-      name: "EL TRANSPORT",
+      name: "GLOBAL TRANSPORTATION",
       description:
-        "Seamless transportation and journeys through carefully selected partners.",
+        "Seamless journeys by air, land and beyond.",
       image:
        "/images/travel&hospitality2.png", link: "#transport",
     },
 
     {
       number: "03",
-      name: "EL HOSPITALITY",
+      name: "TAILORED JOURNEYS",
       description:
-        "Exceptional hospitality experiences across extraordinary destinations.",
+        "Travel shaped around each client's preferences.",
      image:
        "/images/travel&hospitality3.png",  link: "#hospitality",
     },
 
     {
       number: "04",
-      name: "EL INVESTMENTS",
+      name: "HOTELS & RESORTS",
       description:
-        "Strategic investment and growth opportunities across the group.",
+        "Exceptional stays through a global hospitality ne-twork.",
        image:
        "/images/travel&hospitality4.png",link: "#investments",
     },
@@ -166,9 +166,9 @@ const content = {
   partnerships: [
     {
       number: "01",
-      name: "EL PRIVI",
+      name: "BUSINESS CONSULTING",
       description:
-        "Exclusive access to carefully selected offers, experiences and opportunities.",
+        "Turning ambitious luxury and lifestyle ideas into viable businesses.",
       image:
     
       "/images/INVESTMENTS & CONSULTING.png",
@@ -177,9 +177,9 @@ const content = {
 
     {
       number: "02",
-      name: "GLOBAL PARTNERS",
+      name: "INVESTMENT ADVISORY",
       description:
-        "Long-standing relationships with leading luxury and lifestyle brands.",
+        "Informed guidance designed to support sustainable growth.",
       image:
      
       "/images/INVESTMENTS & CONSULTING2.png", link: "#global-partners",
@@ -198,9 +198,9 @@ const content = {
 
     {
       number: "04",
-      name: "BUSINESS CONSULTING",
+      name: "GROWTH STRATEGY",
       description:
-        "Helping investors and entrepreneurs develop market-aware ventures.",
+        "Strategies built around competitiveness, expansion and long-term value.",
       image:
    
    
@@ -456,9 +456,9 @@ function Work() {
                   loading="lazy"
                 />
 
-                <span className="card-arrow">
+                {/* <span className="card-arrow">
                   ↗
-                </span>
+                </span> */}
 
               </div>
 

@@ -1290,7 +1290,7 @@
         65px,
         14vw,
         95px
-      );
+      ); 
   }
 
 
@@ -1444,7 +1444,7 @@
 
   .profile-sub-heading {
 
-    font-size: 22vw;
+    font-size: 18vw;
 
     margin-bottom: 2rem;
   }
