@@ -14,6 +14,7 @@ import Video from "./components/Video-sec/Video";
 import Whtwedo from "./components/What-we-do/wwd";
 import CeoPage from "./pages/Ceo/Ceo-profile";
 import ContactPage from "./pages/Contact/Contact";
+import LuxuryMenu from "./components/menu/LuxuryMenu";
 
 // Created a separate Home component for your landing page layout
 function Home() {
@@ -50,6 +51,7 @@ function App() {
     <Router>
       <div className="app">
         
+        <LuxuryMenu />
         <Routes>
           {/* Main Landing Page */}
           <Route path="/" element={<Home />} />

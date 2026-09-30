@@ -1,0 +1,233 @@
+/* Box Sizing reset */
+.luxury-nav-container *,
+.luxury-nav-container *::before,
+.luxury-nav-container *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add this to LuxuryMenu.css */
+.luxury-nav-container {
+  position: fixed;
+  top: 20px;
+  left: 20px; /* or right: 20px depending on where you want the toggle button */
+  z-index: 1000; /* Ensures it floats above the Hero and video overlays */
+}
+
+/* ==========================================
+   TRIGGER BUTTON
+========================================== */
+.menu-trigger-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 12px;
+  width: 44px;
+  height: 44px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background-color: #0b132b;
+  transition: opacity 0.2s ease;
+}
+
+.menu-trigger-btn:hover .hamburger-line {
+  opacity: 0.6;
+}
+
+/* ==========================================
+   OVERLAY
+========================================== */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 998;
+}
+
+.menu-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================
+   DRAWER PANEL
+========================================== */
+.luxury-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 440px;
+  max-width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.luxury-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+.drawer-header {
+  height: 70px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0b132b;
+  padding: 0;
+  font-family: inherit;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.close-text {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+/* ==========================================
+   BODY CONTENT
+========================================== */
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-body ul {
+  list-style: none;
+}
+
+/* Primary Links */
+.primary-nav {
+  padding: 40px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.primary-link {
+  color: #0b132b;
+  text-decoration: none;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.primary-link:hover {
+  opacity: 0.5;
+}
+
+/* Featured Section */
+.featured-section {
+  border-top: 1px solid #eef1f5;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.featured-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  color: #0b132b;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.featured-link:hover {
+  opacity: 0.6;
+}
+
+.arrow-icon {
+  font-size: 16px;
+}
+
+/* Secondary Links */
+.secondary-nav {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.secondary-link {
+  color: #0b132b;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  font-weight: 500;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.secondary-link:hover {
+  opacity: 0.5;
+}
+
+/* Social Icons Footer */
+.social-footer {
+  margin-top: auto;
+  padding: 30px 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 36px;
+}
+
+.social-icon {
+  color: #0b132b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-icon:hover {
+  opacity: 0.5;
+}

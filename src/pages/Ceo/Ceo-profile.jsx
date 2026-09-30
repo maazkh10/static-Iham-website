@@ -79,7 +79,7 @@ const CeoPage = () => {
         <div className="banner-image-frame">
 
           <img
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=85&w=2000&auto=format&fit=crop"
+            src="images/mamporfoli4.jpeg"
             alt="Ilham Abbas"
             className="hero-closeup-img"
           />
@@ -166,7 +166,7 @@ const CeoPage = () => {
             <div className="polaroid-img-container">
 
               <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=85&w=1200&auto=format&fit=crop"
+                src="images/mamprofile1.jpeg"
                 alt="Ilham Abbas portrait"
               />
 
@@ -398,15 +398,15 @@ const CeoPage = () => {
             <div className="collage-photo-frame frame-left">
 
               <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=85&w=1000&auto=format&fit=crop"
+                src="images/mamporfoli2.jpeg"
                 alt="Ilham Abbas speaking"
               />
 
-              <div className="collage-photo-label">
+              {/* <div className="collage-photo-label">
                 THE FUTURE
                 <br />
                 OF LUXURY
-              </div>
+              </div> */}
 
             </div>
 
@@ -414,17 +414,17 @@ const CeoPage = () => {
             <div className="collage-photo-frame frame-right">
 
               <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=85&w=1000&auto=format&fit=crop"
+                src="images/mamporfoli3.jpeg"
                 alt="Ilham Abbas at fashion event"
               />
 
-              <div className="collage-photo-label right">
+              {/* <div className="collage-photo-label right">
                 DUBAI
                 <br />
                 FASHION
                 <br />
                 WEEK
-              </div>
+              </div> */}
 
             </div>
 

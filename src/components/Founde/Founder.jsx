@@ -365,7 +365,7 @@ export default function FounderVision() {
             <div className="img-wrapper">
 
               <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&q=85"
+                src="/images/mamprofile1.jpeg"
                 alt="Founder Portrait"
               />
 

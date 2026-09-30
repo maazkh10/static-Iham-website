@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ContactPage.css';
 
-const ContactPage = () => {
+const ContactPage = () => {n
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {

@@ -73,36 +73,36 @@ export default function Footer() {
         <div className="directory-side">
           
           <div className="giant-nav-item">
-            <span className="index-num">01 /</span>
-            <a href="#projects" className="giant-nav-link">
-              <span className="link-title">THE ARCHIVE</span>
-              <span className="link-subtitle">Selected Projects</span>
+            {/* <span className="index-num"> 01 /</span> */}
+            <a href="/About" className="giant-nav-link">
+              <span className="link-title">About Us</span>
+              <span className="link-subtitle">About us </span>
             </a>
           </div>
 
           <div className="giant-nav-item">
-            <span className="index-num">02 /</span>
-            <a href="#studio" className="giant-nav-link">
-              <span className="link-title">THE STUDIO</span>
-              <span className="link-subtitle">Philosophy & Culture</span>
+            {/* <span className="index-num">02 /</span> */}
+            <a href="/contact-us" className="giant-nav-link">
+              <span className="link-title">Contact Us</span>
+              <span className="link-subtitle">Contact us </span>
             </a>
           </div>
 
           <div className="giant-nav-item">
-            <span className="index-num">03 /</span>
-            <a href="#journal" className="giant-nav-link">
-              <span className="link-title">EDITORIAL</span>
-              <span className="link-subtitle">Thoughts & Perspectives</span>
+            {/* <span className="index-num">03 /</span> */}
+            <a href="/ceo-profile" className="giant-nav-link">
+              <span className="link-title">Ceo</span>
+              <span className="link-subtitle">CEO Profile</span>
             </a>
           </div>
 
-          <div className="giant-nav-item">
+          {/* <div className="giant-nav-item">
             <span className="index-num">04 /</span>
             <a href="#contact" className="giant-nav-link">
               <span className="link-title">INQUIRIES</span>
               <span className="link-subtitle">Start a Partnership</span>
             </a>
-          </div>
+          </div> */}
 
         </div>
 
